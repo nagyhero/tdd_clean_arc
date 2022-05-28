@@ -11,6 +11,8 @@ import 'package:tdd_clean_arc/features/number_trivia/domain/entities/number_triv
     as _i6;
 import 'package:tdd_clean_arc/features/number_trivia/domain/repositories/number_trivia_repository.dart'
     as _i3;
+import 'package:tdd_clean_arc/features/number_trivia/domain/usecases/get_concrete_number_trivia.dart'
+    as _i7;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -35,8 +37,8 @@ class MockNumberTriviaRepository extends _i1.Mock
 
   @override
   _i4.Future<_i2.Either<_i5.Failure, _i6.NumberTrivia>> getConcreteNumberTrivia(
-          int? number) =>
-      (super.noSuchMethod(Invocation.method(#getConcreteNumberTrivia, [number]),
+          _i7.Params? params) =>
+      (super.noSuchMethod(Invocation.method(#getConcreteNumberTrivia, [params]),
           returnValue: Future<_i2.Either<_i5.Failure, _i6.NumberTrivia>>.value(
               _FakeEither_0<_i5.Failure, _i6.NumberTrivia>())) as _i4
           .Future<_i2.Either<_i5.Failure, _i6.NumberTrivia>>);

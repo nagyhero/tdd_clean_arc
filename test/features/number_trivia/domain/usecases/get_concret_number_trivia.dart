@@ -27,13 +27,14 @@ void main() {
     () async {
       //arange
 
-      when(mockNumberTriviaRepository.getConcreteNumberTrivia(tNumber))
+      when(mockNumberTriviaRepository.getConcreteNumberTrivia(const Params(1)))
           .thenAnswer((_) async => Right(tNumberTrivia));
       //act
-      final result = await usecase.repository.getConcreteNumberTrivia(1);
+      final result = await usecase.call(const Params(1));
       //assert
       expect(result, equals(Right(tNumberTrivia)));
-      verify(mockNumberTriviaRepository.getConcreteNumberTrivia(tNumber));
+      verify(
+          mockNumberTriviaRepository.getConcreteNumberTrivia(const Params(1)));
       verifyNoMoreInteractions(mockNumberTriviaRepository);
     },
   );
